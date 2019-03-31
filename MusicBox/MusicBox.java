@@ -100,7 +100,9 @@ public class MusicBox {
       seq = new Sequence(Sequence.PPQ, 4);
       trck = seq.createTrack();
       sequencer.setTempoInBPM(120);
-    } catch (Exception ex) {/*hello*/}
+    } catch (Exception ex) {
+        ex.printStackTrace();
+    }
   }
 
   private void buildTrackAndStart() {
