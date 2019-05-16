@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="db024713-2fa8-4994-8cd7-4b8932e6060d" name="Default Changelist" comment="" />
+    <list default="true" id="db024713-2fa8-4994-8cd7-4b8932e6060d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Beat-O-Mania.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Beat-O-Mania.java" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -32,23 +36,28 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/MusicBox.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1512">
-              <caret line="8" column="27" lean-forward="true" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="27" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="51">
               <caret line="3" selection-start-line="3" selection-end-line="3" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Beat-O-Mania.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="9" column="14" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
+              <folding>
+                <element signature="e#4622#4623#0" expanded="true" />
+                <element signature="e#4656#4657#0" expanded="true" />
+                <element signature="e#4786#4787#0" expanded="true" />
+                <element signature="e#4816#4817#0" expanded="true" />
+                <element signature="e#5911#5912#0" expanded="true" />
+                <element signature="e#5936#5937#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -63,7 +72,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -77,6 +86,7 @@
         <option value="$PROJECT_DIR$/src/GraphicBeats.java" />
         <option value="$PROJECT_DIR$/src/chegg.java" />
         <option value="$PROJECT_DIR$/src/MusicBox.java" />
+        <option value="$PROJECT_DIR$/src/Beat-O-Mania.java" />
       </list>
     </option>
   </component>
@@ -92,30 +102,30 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="MusicBox" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MusicBox" type="462c0819:PsiDirectoryNode" />
+              <item name="Beat-O-Mania" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Beat-O-Mania" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="MusicBox" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MusicBox" type="462c0819:PsiDirectoryNode" />
+              <item name="Beat-O-Mania" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Beat-O-Mania" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554197203431" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558032263073" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="restartRequiresConfirmation" value="false" />
   </component>
@@ -131,7 +141,14 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.MusicBox">
+  <component name="RunManager" selected="Application.Beat_O_Mania">
+    <configuration name="Beat_O_Mania" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Beat_O_Mania" />
+      <module name="MusicBox" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="GraphicBeats" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="GraphicBeats" />
       <module name="MusicBox" />
@@ -141,13 +158,6 @@
     </configuration>
     <configuration name="MiniMiniMusicBox" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="MiniMiniMusicBox" />
-      <module name="MusicBox" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MusicBox" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="MusicBox" />
       <module name="MusicBox" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -169,7 +179,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.MusicBox" />
+        <item itemvalue="Application.Beat_O_Mania" />
         <item itemvalue="Application.GraphicBeats" />
         <item itemvalue="Application.MiniMiniMusicBox" />
         <item itemvalue="Application.simpleAnimation" />
@@ -209,17 +219,17 @@
       <workItem from="1557388719158" duration="696000" />
       <workItem from="1557411456441" duration="80000" />
       <workItem from="1558004091181" duration="445000" />
+      <workItem from="1558032162613" duration="126000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="67586000" />
+    <option name="totallyTimeSpent" value="67712000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.11610738" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.11744966" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -229,7 +239,7 @@
       <window_info id="Learn" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.08579089" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.08579089" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39823008" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -315,20 +325,26 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/chegg.java" />
-    <entry file="file://$PROJECT_DIR$/src/MusicBox.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1512">
-          <caret line="8" column="27" lean-forward="true" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MusicBox.java" />
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Beat-O-Mania.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="9" column="14" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
+          <folding>
+            <element signature="e#4622#4623#0" expanded="true" />
+            <element signature="e#4656#4657#0" expanded="true" />
+            <element signature="e#4786#4787#0" expanded="true" />
+            <element signature="e#4816#4817#0" expanded="true" />
+            <element signature="e#5911#5912#0" expanded="true" />
+            <element signature="e#5936#5937#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

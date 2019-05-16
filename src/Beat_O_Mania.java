@@ -4,7 +4,10 @@ import java.awt.event.*;
 import java.util.ArrayList;
 import javax.sound.midi.*;
 
-public class MusicBox {
+/**
+ * The type Beat o mania.
+ */
+public class Beat_O_Mania {
 
   private JPanel mainPanel;
   private ArrayList<JCheckBox> checkBoxList;
@@ -17,11 +20,16 @@ public class MusicBox {
   , "Whistle", "Low Congo", "Cowbell", "Vibraslap", "Low-mid Tom", "High Agogo", "Open Hi Congo"};
   private int[] instruments = {36,42,46,38,49,39,50,60,70,72,64,56,58,47,67,63};
 
+  /**
+   * The entry point of application.
+   *
+   * @param args the input arguments
+   */
   public static void main(String [] args) {
     try {
       UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
     } catch (Exception ex) {}
-    new MusicBox().setUpGUI();
+    new Beat_O_Mania().setUpGUI();
   }
 
   private void setUpGUI() {
@@ -154,6 +162,9 @@ public class MusicBox {
     }
   }
 
+  /**
+   * The type Start action listener.
+   */
   public class startActionListener implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -161,6 +172,9 @@ public class MusicBox {
     }
   }
 
+  /**
+   * The type Stop action listener.
+   */
   public class stopActionListener implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -168,6 +182,9 @@ public class MusicBox {
     }
   }
 
+  /**
+   * The type Up tempo action listener.
+   */
   public class upTempoActionListener implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -177,6 +194,9 @@ public class MusicBox {
     }
   }
 
+  /**
+   * The type Down tempo action listener.
+   */
   public class downTempoActionListener implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -187,6 +207,9 @@ public class MusicBox {
     }
   }
 
+  /**
+   * The type Beat drop action listener.
+   */
   public class beatDropActionListener implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -198,6 +221,9 @@ public class MusicBox {
     }
   }
 
+  /**
+   * The type Clear all action listener.
+   */
   public class clearAllActionListener implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
