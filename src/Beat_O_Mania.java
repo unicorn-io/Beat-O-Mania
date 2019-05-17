@@ -1,6 +1,28 @@
-import javax.swing.*;
-import java.awt.*;
-import java.awt.event.*;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JCheckBox;
+import javax.swing.JLabel;
+import javax.swing.UIManager;
+import javax.swing.BorderFactory;
+import javax.swing.JButton;
+import javax.swing.Box;
+import javax.swing.BoxLayout;
+import javax.swing.JMenuBar;
+import javax.swing.JMenu;
+import javax.swing.JMenuItem;
+import javax.swing.JFileChooser;
+import java.io.FileOutputStream;
+import java.io.ObjectOutputStream;
+import java.io.FileInputStream;
+import java.io.ObjectInputStream;
+import java.io.File;
+import java.awt.Font;
+import java.awt.BorderLayout;
+import java.awt.GridLayout;
+import java.awt.Label;
+import java.awt.Color;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 import java.util.ArrayList;
 import javax.sound.midi.*;
 
@@ -9,6 +31,7 @@ import javax.sound.midi.*;
  */
 public class Beat_O_Mania {
 
+  private JFrame frame;
   private JPanel mainPanel;
   private ArrayList<JCheckBox> checkBoxList;
   private Sequencer sequencer;
@@ -33,7 +56,7 @@ public class Beat_O_Mania {
   }
 
   private void setUpGUI() {
-    JFrame frame = new JFrame("Music Box --> Beat Maker");
+    frame = new JFrame("Music Box --> Beat Maker");
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     BorderLayout layout = new BorderLayout();
     JPanel background = new JPanel(layout);
@@ -88,6 +111,18 @@ public class Beat_O_Mania {
     mainPanel = new JPanel();
     mainPanel.setLayout(grid);
     background.add(BorderLayout.CENTER, mainPanel);
+
+    JMenuBar menuBar = new JMenuBar();
+    JMenu fileMenu = new JMenu("File");
+    JMenuItem saveFile = new JMenuItem("Save");
+    JMenuItem loadFile = new JMenuItem("Load");
+    fileMenu.add(saveFile);
+    fileMenu.add(loadFile);
+    menuBar.add(fileMenu);
+    saveFile.addActionListener(new SaveFileListener());
+    loadFile.addActionListener(new LoadFileListener());
+
+    frame.setJMenuBar(menuBar);
 
     for (int i = 0; i < 256; i++) {
       JCheckBox c = new JCheckBox();
@@ -221,6 +256,60 @@ public class Beat_O_Mania {
     }
   }
 
+  public class SaveFileListener implements ActionListener {
+    public void actionPerformed(ActionEvent ev) {
+      boolean[] currentState = new boolean[256];
+      for (int i = 0; i < 256; i++) {
+        JCheckBox check = (JCheckBox) checkBoxList.get(i);
+        if (check.isSelected()) {
+          currentState[i] = true;
+        }
+      }
+
+      JFileChooser fileSave = new JFileChooser();
+      fileSave.showSaveDialog(frame);
+
+      try {
+        FileOutputStream fout = new FileOutputStream(fileSave.getSelectedFile());
+        ObjectOutputStream os = new ObjectOutputStream(fout);
+        os.writeObject(currentState);
+        os.close();
+      } catch(Exception ex) {
+        ex.printStackTrace();
+      }
+    }
+  }
+
+  public class LoadFileListener implements ActionListener {
+    public void actionPerformed(ActionEvent ev) {
+
+      JFileChooser fileLoad = new JFileChooser();
+      fileLoad.showOpenDialog(frame);
+
+      boolean[] checkBoxState = null;
+      try {
+        FileInputStream fin = new FileInputStream(fileLoad.getSelectedFile());
+        ObjectInputStream oi = new ObjectInputStream(fin);
+        checkBoxState = (boolean[]) oi.readObject();
+
+      } catch(Exception ex) {
+        ex.printStackTrace();
+      }
+
+      for (int i = 0; i < 256; i++) {
+        JCheckBox check = (JCheckBox) checkBoxList.get(i);
+        if (checkBoxState[i]) {
+          check.setSelected(true);
+        } else {
+          check.setSelected(false);
+        }
+      }
+
+      sequencer.stop();
+      buildTrackAndStart();
+    }
+  }
+
   /**
    * The type Clear all action listener.
    */
@@ -241,4 +330,5 @@ public class Beat_O_Mania {
     } catch (Exception ex) {}
     return event;
   }
+
 }
