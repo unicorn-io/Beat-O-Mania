@@ -28,7 +28,7 @@ public class Beat_O_Mania {
   public static void main(String [] args) {
     try {
       UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-    } catch (Exception ex) {}
+    } catch (Exception ex) { ex.printStackTrace(); }
     new Beat_O_Mania().setUpGUI();
   }
 
