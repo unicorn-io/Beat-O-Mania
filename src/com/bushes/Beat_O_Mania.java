@@ -17,7 +17,6 @@ import java.io.FileOutputStream;
 import java.io.ObjectOutputStream;
 import java.io.FileInputStream;
 import java.io.ObjectInputStream;
-import java.io.File;
 import java.awt.Font;
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
@@ -25,8 +24,10 @@ import java.awt.Label;
 import java.awt.Color;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import java.util.ArrayList;
+import javax.swing.ImageIcon;
 import javax.sound.midi.*;
+import java.util.Date;
+import java.util.ArrayList;
 
 /**
  * The type Beat o mania.
@@ -40,6 +41,7 @@ public class Beat_O_Mania {
   private Sequence seq;
   private Track trck;
   private JLabel showTempo = new JLabel("120");
+  Date todayDate;
 
   private String[] instrumentNames = {"Bass Drum", "Closed Hi-Hat", "Open Hi-Hat", "Acoustic Snare", "Crash Cymbal", "Hand Clap", "High Tom", "Hi Bongo", "Maracas"
   , "Whistle", "Low Congo", "Cowbell", "Vibraslap", "Low-mid Tom", "High Agogo", "Open Hi Congo"};
@@ -58,7 +60,10 @@ public class Beat_O_Mania {
   }
 
   private void setUpGUI() {
+    ImageIcon logo =  new ImageIcon("D:\\kulfikaam\\Beat-O-Mania\\Logo.png");
+
     frame = new JFrame("--->Beat-O-Mania<---");
+    frame.setIconImage(logo.getImage());
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     BorderLayout layout = new BorderLayout();
     JPanel background = new JPanel(layout);
@@ -321,7 +326,6 @@ public class Beat_O_Mania {
       clearList();
     }
   }
-
 
   private static MidiEvent makeEvent(int comd, int chan, int one, int two, int tick) {
     MidiEvent event = null;

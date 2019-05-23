@@ -13,10 +13,17 @@
       <change afterPath="$PROJECT_DIR$/../QuizCard/src/QuizCard.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../QuizCard/src/QuizCardBuilder.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../QuizCard/src/QuizCardPlayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MusicBox/GraphicBeats$drawingPanel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MusicBox/GraphicBeats.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MusicBox/MiniMiniMusicBox.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Beat_O_Mania.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MusicBox/com/bushes/Beat_O_Mania$LoadFileListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MusicBox/com/bushes/Beat_O_Mania$LoadFileListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MusicBox/com/bushes/Beat_O_Mania$SaveFileListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MusicBox/com/bushes/Beat_O_Mania$SaveFileListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MusicBox/com/bushes/Beat_O_Mania$beatDropActionListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MusicBox/com/bushes/Beat_O_Mania$beatDropActionListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MusicBox/com/bushes/Beat_O_Mania$clearAllActionListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MusicBox/com/bushes/Beat_O_Mania$clearAllActionListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MusicBox/com/bushes/Beat_O_Mania$downTempoActionListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MusicBox/com/bushes/Beat_O_Mania$downTempoActionListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MusicBox/com/bushes/Beat_O_Mania$startActionListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MusicBox/com/bushes/Beat_O_Mania$startActionListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MusicBox/com/bushes/Beat_O_Mania$stopActionListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MusicBox/com/bushes/Beat_O_Mania$stopActionListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MusicBox/com/bushes/Beat_O_Mania$upTempoActionListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MusicBox/com/bushes/Beat_O_Mania$upTempoActionListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MusicBox/com/bushes/Beat_O_Mania.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MusicBox/com/bushes/Beat_O_Mania.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/bushes/Beat_O_Mania.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/bushes/Beat_O_Mania.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -51,8 +58,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/bushes/Beat_O_Mania.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="33" column="13" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
+            <state relative-caret-position="-1785">
+              <caret line="18" column="33" selection-start-line="18" selection-start-column="33" selection-end-line="18" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -88,6 +95,8 @@
         <option value="$PROJECT_DIR$/src/MusicBox.java" />
         <option value="$PROJECT_DIR$/src/Beat-O-Mania.java" />
         <option value="$PROJECT_DIR$/src/Beat_O_Mania.java" />
+        <option value="$PROJECT_DIR$/src/com/bushes/dateTimeThread.java" />
+        <option value="$PROJECT_DIR$/src/com/bushes/Beat_O_Mania.java" />
       </list>
     </option>
   </component>
@@ -104,7 +113,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -162,12 +170,13 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558502578674" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558590250027" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.completion" />
@@ -273,16 +282,20 @@
       <workItem from="1558086864242" duration="6210000" />
       <workItem from="1558107651613" duration="22000" />
       <workItem from="1558500986898" duration="740000" />
+      <workItem from="1558575185803" duration="1318000" />
+      <workItem from="1558588325292" duration="1946000" />
+      <workItem from="1558590843135" duration="1020000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="76150000" />
+    <option name="totallyTimeSpent" value="80434000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26442954" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13892618" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -292,7 +305,7 @@
       <window_info id="Learn" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.43163538" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.2855228" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39823008" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -343,37 +356,17 @@
     <entry file="file://$PROJECT_DIR$/src/chegg.java" />
     <entry file="file://$PROJECT_DIR$/src/MusicBox.java" />
     <entry file="file://$PROJECT_DIR$/src/Beat-O-Mania.java" />
-    <entry file="file://$PROJECT_DIR$/src/GraphicBeats.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="901">
-          <caret line="53" column="3" selection-start-line="53" selection-start-column="3" selection-end-line="53" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GraphicBeats.java" />
     <entry file="file://$PROJECT_DIR$/src/Main.java" />
     <entry file="file://$PROJECT_DIR$/src/testGui.java" />
     <entry file="file://$PROJECT_DIR$/src/simpleAnimation.java" />
-    <entry file="file://$PROJECT_DIR$/src/Beat_O_Mania.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2601">
-          <caret line="72" column="53" selection-start-line="72" selection-start-column="53" selection-end-line="72" selection-end-column="53" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MiniMiniMusicBox.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="31" selection-start-line="2" selection-start-column="31" selection-end-line="2" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Beat_O_Mania.java" />
+    <entry file="file://$PROJECT_DIR$/src/MiniMiniMusicBox.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/bushes/dateTimeThread.java" />
     <entry file="file://$PROJECT_DIR$/src/com/bushes/Beat_O_Mania.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="33" column="13" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
+        <state relative-caret-position="-1785">
+          <caret line="18" column="33" selection-start-line="18" selection-start-column="33" selection-end-line="18" selection-end-column="33" />
         </state>
       </provider>
     </entry>
