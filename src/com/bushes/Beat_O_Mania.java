@@ -13,6 +13,7 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 import javax.swing.JFileChooser;
+import javax.swing.JColorChooser;
 import java.io.FileOutputStream;
 import java.io.ObjectOutputStream;
 import java.io.FileInputStream;
@@ -25,8 +26,12 @@ import java.awt.Color;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.ImageIcon;
-import javax.sound.midi.*;
-import java.util.Date;
+import javax.sound.midi.Sequencer;
+import javax.sound.midi.Sequence;
+import javax.sound.midi.Track;
+import javax.sound.midi.MidiSystem;
+import javax.sound.midi.MidiEvent;
+import javax.sound.midi.ShortMessage;
 import java.util.ArrayList;
 
 /**
@@ -35,13 +40,11 @@ import java.util.ArrayList;
 public class Beat_O_Mania {
 
   private JFrame frame;
-  private JPanel mainPanel;
   private ArrayList<JCheckBox> checkBoxList;
   private Sequencer sequencer;
   private Sequence seq;
   private Track trck;
   private JLabel showTempo = new JLabel("120");
-  Date todayDate;
 
   private String[] instrumentNames = {"Bass Drum", "Closed Hi-Hat", "Open Hi-Hat", "Acoustic Snare", "Crash Cymbal", "Hand Clap", "High Tom", "Hi Bongo", "Maracas"
   , "Whistle", "Low Congo", "Cowbell", "Vibraslap", "Low-mid Tom", "High Agogo", "Open Hi Congo"};
@@ -69,7 +72,7 @@ public class Beat_O_Mania {
     JPanel background = new JPanel(layout);
     background.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 
-    checkBoxList = new ArrayList<JCheckBox>();
+    checkBoxList = new ArrayList<>();
     Box buttonBox= new Box(BoxLayout.Y_AXIS);
 
     JButton start = new JButton("Start");
@@ -108,10 +111,10 @@ public class Beat_O_Mania {
     frame.getContentPane().add(background);
 
     GridLayout grid = new GridLayout(16, 16);
-    grid.setVgap(1);
+    grid.setVgap(0);
     grid.setHgap(2);
 
-    mainPanel = new JPanel();
+    JPanel mainPanel = new JPanel();
     mainPanel.setLayout(grid);
     background.add(BorderLayout.CENTER, mainPanel);
 
@@ -121,15 +124,18 @@ public class Beat_O_Mania {
     JMenuItem saveFile = new JMenuItem("Save");
     JMenuItem loadFile = new JMenuItem("Load");
     JMenuItem newFile = new JMenuItem("New");
+    JMenuItem colourChoose = new JMenuItem("Color");
     fileMenu.add(newFile);
     fileMenu.add(saveFile);
     fileMenu.add(loadFile);
+    fileMenu.add(colourChoose);
     menuBar.add(fileMenu);
     menuBar.add(credits);
     newFile.addActionListener(new newFileListener());
     saveFile.addActionListener(new SaveFileListener());
     loadFile.addActionListener(new LoadFileListener());
     credits.addActionListener(new creditsListener());
+    colourChoose.addActionListener(new colourListener());
 
     frame.setJMenuBar(menuBar);
 
@@ -140,7 +146,7 @@ public class Beat_O_Mania {
       mainPanel.add(c);
     }
     setUpMidi();
-    background.setBackground(Color.ORANGE);
+    background.setBackground(Color.RED);
     frame.setBounds(50, 50, 600, 600);
     frame.pack();
     frame.setVisible(true);
@@ -157,7 +163,7 @@ public class Beat_O_Mania {
   }
 
   private void buildTrackAndStart() {
-    int[] trackList = null;
+    int[] trackList;
     seq.deleteTrack(trck);
     trck = seq.createTrack();
     for (int i = 0; i < 16; i++) {
@@ -197,12 +203,6 @@ public class Beat_O_Mania {
   private void clearList() {
     for (JCheckBox c : checkBoxList) {
       c.setSelected(false);
-    }
-  }
-
-  private void overFlowList() {
-    for (JCheckBox c : checkBoxList) {
-      c.setSelected(true);
     }
   }
 
@@ -252,10 +252,11 @@ public class Beat_O_Mania {
   }
 
   public class SaveFileListener implements ActionListener {
+    @Override
     public void actionPerformed(ActionEvent ev) {
       boolean[] currentState = new boolean[256];
       for (int i = 0; i < 256; i++) {
-        JCheckBox check = (JCheckBox) checkBoxList.get(i);
+        JCheckBox check = checkBoxList.get(i);
         if (check.isSelected()) {
           currentState[i] = true;
         }
@@ -276,6 +277,7 @@ public class Beat_O_Mania {
   }
 
   public class LoadFileListener implements ActionListener {
+    @Override
     public void actionPerformed(ActionEvent ev) {
 
       JFileChooser fileLoad = new JFileChooser();
@@ -306,6 +308,7 @@ public class Beat_O_Mania {
   }
 
   public class newFileListener implements ActionListener {
+    @Override
     public void actionPerformed(ActionEvent ev) {
       sequencer.stop();
       clearList();
@@ -313,16 +316,17 @@ public class Beat_O_Mania {
   }
 
   public class creditsListener implements ActionListener {
+    @Override
     public void actionPerformed(ActionEvent ev) {
-      JFrame creditFrame = new JFrame("--->Credits<---");
-      //creditFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-      GridLayout grid = new GridLayout();
-      JPanel creditPanel = new JPanel(grid);
-      JLabel creditsLabel = new JLabel("Unicorn-io, Kathy Sierra & Bert Bates");
-      creditPanel.add(creditsLabel);
-      creditFrame.add(creditPanel);
-      creditFrame.setSize(400, 400);
-      creditFrame.setVisible(true);
+        JFrame creditFrame = new JFrame("---0>Credits<---");
+        creditFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        GridLayout grid = new GridLayout();
+        JPanel creditPanel = new JPanel(grid);
+        JLabel creditsLabel = new JLabel("Unicorn-io, Kathy Sierra & Bert Bates");
+        creditPanel.add(creditsLabel);
+        creditFrame.add(creditPanel);
+        creditFrame.setSize(400, 400);
+        creditFrame.setVisible(true);
     }
   }
 
@@ -336,13 +340,21 @@ public class Beat_O_Mania {
     }
   }
 
+  public class colourListener implements ActionListener {
+    public void actionPerformed(ActionEvent ev) {
+
+    }
+  }
+
   private static MidiEvent makeEvent(int comd, int chan, int one, int two, int tick) {
     MidiEvent event = null;
     try {
       ShortMessage a = new ShortMessage();
       a.setMessage(comd, chan, one, two);
       event = new MidiEvent(a, tick);
-    } catch (Exception ex) {}
+    } catch (Exception ex) {
+      ex.printStackTrace();
+    }
     return event;
   }
 
