@@ -88,10 +88,6 @@ public class Beat_O_Mania {
     downTempo.addActionListener(new downTempoActionListener());
     buttonBox.add(downTempo);
 
-    JButton beatDrop = new JButton("Drop");
-    beatDrop.addActionListener(new beatDropActionListener());
-    buttonBox.add(beatDrop);
-
     JButton clearAll = new JButton("Clear All");
     clearAll.addActionListener(new clearAllActionListener());
     buttonBox.add(clearAll);
@@ -112,7 +108,7 @@ public class Beat_O_Mania {
     frame.getContentPane().add(background);
 
     GridLayout grid = new GridLayout(16, 16);
-    grid.setVgap(0);
+    grid.setVgap(1);
     grid.setHgap(2);
 
     mainPanel = new JPanel();
@@ -121,13 +117,19 @@ public class Beat_O_Mania {
 
     JMenuBar menuBar = new JMenuBar();
     JMenu fileMenu = new JMenu("File");
+    JButton credits = new JButton("Credits");
     JMenuItem saveFile = new JMenuItem("Save");
     JMenuItem loadFile = new JMenuItem("Load");
+    JMenuItem newFile = new JMenuItem("New");
+    fileMenu.add(newFile);
     fileMenu.add(saveFile);
     fileMenu.add(loadFile);
     menuBar.add(fileMenu);
+    menuBar.add(credits);
+    newFile.addActionListener(new newFileListener());
     saveFile.addActionListener(new SaveFileListener());
     loadFile.addActionListener(new LoadFileListener());
+    credits.addActionListener(new creditsListener());
 
     frame.setJMenuBar(menuBar);
 
@@ -249,20 +251,6 @@ public class Beat_O_Mania {
     }
   }
 
-  /**
-   * The type Beat drop action listener.
-   */
-  public class beatDropActionListener implements ActionListener {
-    @Override
-    public void actionPerformed(ActionEvent e) {
-      float tempoFactor = sequencer.getTempoFactor();
-      if (tempoFactor > 0.09) {
-        sequencer.setTempoFactor(1);
-      }
-      showTempo.setText(sequencer.getTempoFactor() + "");
-    }
-  }
-
   public class SaveFileListener implements ActionListener {
     public void actionPerformed(ActionEvent ev) {
       boolean[] currentState = new boolean[256];
@@ -314,6 +302,27 @@ public class Beat_O_Mania {
 
       sequencer.stop();
       buildTrackAndStart();
+    }
+  }
+
+  public class newFileListener implements ActionListener {
+    public void actionPerformed(ActionEvent ev) {
+      sequencer.stop();
+      clearList();
+    }
+  }
+
+  public class creditsListener implements ActionListener {
+    public void actionPerformed(ActionEvent ev) {
+      JFrame creditFrame = new JFrame("--->Credits<---");
+      //creditFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+      GridLayout grid = new GridLayout();
+      JPanel creditPanel = new JPanel(grid);
+      JLabel creditsLabel = new JLabel("Unicorn-io, Kathy Sierra & Bert Bates");
+      creditPanel.add(creditsLabel);
+      creditFrame.add(creditPanel);
+      creditFrame.setSize(400, 400);
+      creditFrame.setVisible(true);
     }
   }
 
